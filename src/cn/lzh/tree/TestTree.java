@@ -6,7 +6,7 @@ import org.junit.Test;
  * Created by lzh on 2018/12/20.<br/>
  * 二叉树测试
  */
-public class TreeTest {
+public class TestTree {
 
     public static final String LETTER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final Tree<Character> LETTER_TREE = new Tree<>(new Node<>('A',

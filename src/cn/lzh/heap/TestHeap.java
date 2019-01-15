@@ -4,7 +4,8 @@ import cn.lzh.utils.CommonUtils;
 
 import java.util.Arrays;
 
-public class HeapTest {
+public class TestHeap {
+
     public static void main(String[] args) {
         test1();
         test2();
@@ -12,7 +13,7 @@ public class HeapTest {
 
     private static void test1() {
         System.out.println("\ntest1:初始化空堆");
-        Heap<Integer> heap = new BigTopHeap<>(9);
+        Heap<Integer> heap = new SmallTopHeap<>(9);
         System.out.println("\ninit heap：" + heap.toString());
         sort(heap);
         // 删除+排序
