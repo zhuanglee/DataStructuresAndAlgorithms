@@ -6,11 +6,11 @@ import java.util.Arrays;
 
 /**
  * 大顶堆
- * @param <T>
+ * @param <E>
  * @see #getTop() 获取最大元素
  * @see #sort() 升序
  */
-public class BigTopHeap<T extends Comparable<T>> extends AbstractHeap<T> {
+public class BigTopHeap<E extends Comparable<E>> extends AbstractHeap<E> {
     public BigTopHeap() {
     }
 
@@ -18,11 +18,11 @@ public class BigTopHeap<T extends Comparable<T>> extends AbstractHeap<T> {
         super(initialCapacity);
     }
 
-    public BigTopHeap(T[] initData) {
+    public BigTopHeap(E[] initData) {
         super(initData);
     }
 
-    public BigTopHeap(T[] initData, int initialCapacity) {
+    public BigTopHeap(E[] initData, int initialCapacity) {
         super(initData, initialCapacity);
     }
 
@@ -43,7 +43,7 @@ public class BigTopHeap<T extends Comparable<T>> extends AbstractHeap<T> {
         return "BigTopHeap{" +
                 "data=" + Arrays.toString(data) +
                 ", length=" + length +
-                ", currentMaxIndex=" + currentMaxIndex +
+                ", size=" + size +
                 '}';
     }
 }

@@ -2,11 +2,13 @@ package cn.lzh.heap;
 
 import com.sun.istack.internal.Nullable;
 
+import java.util.PriorityQueue;
+
 /**
  * 堆（https://time.geekbang.org/column/article/69913）
- * @param <T>
+ * @param <E>
  */
-public interface Heap<T> {
+public interface Heap<E> {
 
     /**
      * 初始有效索引：即指向数组中第一个非空数据<br/>
@@ -23,10 +25,10 @@ public interface Heap<T> {
 
     /**
      * 插入元素
-     * @param item T
+     * @param item E
      * @return true-插入成功，false-插入失败（堆满导致）
      */
-    boolean insert(T item);
+    boolean insert(E item);
 
     /**
      * 删除堆顶元素
@@ -34,26 +36,37 @@ public interface Heap<T> {
      * @return 堆顶元素
      */
     @Nullable
-    T deleteTop();
-
-    /**
-     * 堆排序：<br/>
-     * 1、时间复杂度是 O(nlogn)；<br/>
-     * 2、原地排序；<br/>
-     * 3、不稳定排序（每次循环都会首尾互换，相同元素位置会发生变化）；<br/>
-     */
-    void sort();
-
-    /**
-     * 获取堆内数据（可能含有空元素）
-     * @see #DEFAULT_START_INDEX
-     */
-    Object[] getData();
+    E deleteTop();
 
     /**
      * 获取堆顶元素
      * @see #deleteTop()
      */
     @Nullable
-    T getTop();
+    E getTop();
+
+    /**
+     * 导出堆内数据（可能含有空元素）<br/>
+     * @see PriorityQueue#toArray()
+     * @see #DEFAULT_START_INDEX
+     * @return 在此之前调用{@link #sort()}，则返回数据有序，否则可能无序
+     */
+    Object[] toArray();
+
+    /**
+     * 导出堆内数据<br/>
+     * @see PriorityQueue#toArray(Object[])
+     * @return 在此之前调用{@link #sort()}，则返回数据有序，否则可能无序
+     */
+    <T> T[] toArray(T[] a);
+
+    /**
+     * 堆排序：<br/>
+     * 1、时间复杂度是 O(nlogn)；<br/>
+     * 2、原地排序；<br/>
+     * 3、不稳定排序（每次循环都会首尾互换，相同元素位置会发生变化）；<br/>
+     * @return 排序后的数据（大顶堆-升序，小顶堆-降序）
+     */
+    Object[] sort();
+
 }

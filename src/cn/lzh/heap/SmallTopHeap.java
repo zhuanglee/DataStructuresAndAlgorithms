@@ -6,11 +6,11 @@ import java.util.Arrays;
 
 /**
  * 小顶堆
- * @param <T>
+ * @param <E>
  * @see #getTop() 获取最小元素
  * @see #sort() 降序
  */
-public class SmallTopHeap<T extends Comparable<T>> extends AbstractHeap<T> {
+public class SmallTopHeap<E extends Comparable<E>> extends AbstractHeap<E> {
     public SmallTopHeap() {
     }
 
@@ -18,11 +18,11 @@ public class SmallTopHeap<T extends Comparable<T>> extends AbstractHeap<T> {
         super(initialCapacity);
     }
 
-    public SmallTopHeap(T[] initData) {
+    public SmallTopHeap(E[] initData) {
         super(initData);
     }
 
-    public SmallTopHeap(T[] initData, int initialCapacity) {
+    public SmallTopHeap(E[] initData, int initialCapacity) {
         super(initData, initialCapacity);
     }
 
@@ -42,7 +42,7 @@ public class SmallTopHeap<T extends Comparable<T>> extends AbstractHeap<T> {
         return "SmallTopHeap{" +
                 "data=" + Arrays.toString(data) +
                 ", length=" + length +
-                ", currentMaxIndex=" + currentMaxIndex +
+                ", size=" + size +
                 '}';
     }
 }
