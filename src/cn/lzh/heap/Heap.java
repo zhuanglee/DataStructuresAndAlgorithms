@@ -2,8 +2,6 @@ package cn.lzh.heap;
 
 import com.sun.istack.internal.Nullable;
 
-import java.util.PriorityQueue;
-
 /**
  * 堆（https://time.geekbang.org/column/article/69913）
  * @param <E>
@@ -47,7 +45,6 @@ public interface Heap<E> {
 
     /**
      * 导出堆内数据（可能含有空元素）<br/>
-     * @see PriorityQueue#toArray()
      * @see #DEFAULT_START_INDEX
      * @return 在此之前调用{@link #sort()}，则返回数据有序，否则可能无序
      */
@@ -55,7 +52,6 @@ public interface Heap<E> {
 
     /**
      * 导出堆内数据<br/>
-     * @see PriorityQueue#toArray(Object[])
      * @return 在此之前调用{@link #sort()}，则返回数据有序，否则可能无序
      */
     <T> T[] toArray(T[] a);

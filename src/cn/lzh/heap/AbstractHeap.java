@@ -6,11 +6,11 @@ import java.util.Arrays;
 
 /**
  * 堆的抽象类：<br/>
- * 子类重写{@link #compare(Comparable, Comparable)}方法，可分别实现大顶堆和小顶堆
+ * 子类重写{@link #compare(E, E)}方法，可分别实现大顶堆和小顶堆
  *
  * @param <E>
  */
-public abstract class AbstractHeap<E extends Comparable<E>> implements Heap<E> {
+public abstract class AbstractHeap<E> implements Heap<E> {
     /**
      * 堆数据（有null元素）
      */
@@ -159,7 +159,7 @@ public abstract class AbstractHeap<E extends Comparable<E>> implements Heap<E> {
      * @param item2 C
      * @return 1, 0，-1
      */
-    protected abstract <C extends Comparable<C>> int compare(@NotNull C item1, @NotNull C item2);
+    protected abstract int compare(@NotNull E item1, @NotNull E item2);
 
     /**
      * 自下而上堆化：<br/>

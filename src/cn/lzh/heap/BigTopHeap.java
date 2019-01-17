@@ -10,8 +10,9 @@ import java.util.Arrays;
  * @see #getTop() 获取最大元素
  * @see #sort() 升序
  */
-public class BigTopHeap<E extends Comparable<E>> extends AbstractHeap<E> {
+public class BigTopHeap<E> extends AbstractHeap<E> {
     public BigTopHeap() {
+        super();
     }
 
     public BigTopHeap(int initialCapacity) {
@@ -29,13 +30,13 @@ public class BigTopHeap<E extends Comparable<E>> extends AbstractHeap<E> {
     /**
      * 比较大小
      *
-     * @param item1 C
-     * @param item2 C
+     * @param item1 E
+     * @param item2 E
      * @return -1：大于，0：等于，1：小于
      */
     @Override
-    protected <C extends Comparable<C>> int compare(@NotNull C item1, @NotNull C item2) {
-        return item2.compareTo(item1);
+    protected int compare(@NotNull E item1, @NotNull E item2) {
+        return ((Comparable<? super E>)item2).compareTo(item1);
     }
 
     @Override

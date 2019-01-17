@@ -10,8 +10,9 @@ import java.util.Arrays;
  * @see #getTop() 获取最小元素
  * @see #sort() 降序
  */
-public class SmallTopHeap<E extends Comparable<E>> extends AbstractHeap<E> {
+public class SmallTopHeap<E> extends AbstractHeap<E> {
     public SmallTopHeap() {
+        super();
     }
 
     public SmallTopHeap(int initialCapacity) {
@@ -29,13 +30,15 @@ public class SmallTopHeap<E extends Comparable<E>> extends AbstractHeap<E> {
     /**
      * 比较大小
      *
-     * @param item1 C
-     * @param item2 C
+     * @param item1 E
+     * @param item2 E
      * @return 1：大于，0：等于，-1：小于
      */
-    protected <C extends Comparable<C>> int compare(@NotNull C item1, @NotNull C item2) {
-        return item1.compareTo(item2);
+    @Override
+    protected int compare(@NotNull E item1, @NotNull E item2) {
+        return ((Comparable<? super E>)item1).compareTo(item2);
     }
+
 
     @Override
     public String toString() {
