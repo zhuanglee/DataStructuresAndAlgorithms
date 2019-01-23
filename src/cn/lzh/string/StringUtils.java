@@ -10,7 +10,11 @@ import java.util.Map;
  * https://time.geekbang.org/column/article/71187<br/>
  * https://time.geekbang.org/column/article/71525<br/>
  */
-public class StringUtils {
+public final class StringUtils {
+
+    private StringUtils(){
+        throw new AssertionError("cannot instantiation");
+    }
 
     /**
      * @see String#indexOf(String)

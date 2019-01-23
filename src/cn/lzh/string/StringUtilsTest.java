@@ -4,7 +4,11 @@ import cn.lzh.utils.Log;
 
 import static cn.lzh.string.StringUtils.*;
 
-public class TestStringUtils {
+public final class StringUtilsTest {
+
+    private StringUtilsTest(){
+        throw new AssertionError("cannot instantiation");
+    }
 
     static {
         Log.isDebug = false;

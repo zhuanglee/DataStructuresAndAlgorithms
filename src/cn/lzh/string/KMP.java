@@ -7,7 +7,11 @@ import com.sun.istack.internal.NotNull;
  * https://www.zhihu.com/question/21923021<br/>
  * https://time.geekbang.org/column/article/71845
  */
-public final class KMP {
+final class KMP {
+
+    private KMP(){
+        throw new AssertionError("cannot instantiation");
+    }
 
     /**
      * @param str    主串

@@ -16,7 +16,11 @@ import java.util.Map;
  * <strong>suffix</strong>记录某后缀（后缀的长度为数组的下标）在模式串中出现的位置；<br/>
  * <strong>prefix</strong>记录某后缀（后缀的长度为数组的下标）是否为模式串的前缀；<br/>
  */
-public class BoyerMoore {
+final class BoyerMoore {
+
+    private BoyerMoore(){
+        throw new AssertionError("cannot instantiation");
+    }
 
     /**
      * @param str    主串
