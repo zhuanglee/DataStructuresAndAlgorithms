@@ -1,7 +1,7 @@
 package cn.lzh.tree;
 
 /**
- * 红黑树<br/>
+ * TODO 红黑树<br/>
  * https://time.geekbang.org/column/article/68976
  */
 public class RedBlackTree extends BinarySearchTree {
@@ -21,7 +21,7 @@ public class RedBlackTree extends BinarySearchTree {
     }
 
     @Override
-    public Node<Integer> find(int value) {
+    public BinaryNode<Integer> find(int value) {
         return super.find(value);
     }
 }

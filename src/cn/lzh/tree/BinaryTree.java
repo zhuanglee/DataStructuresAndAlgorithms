@@ -3,25 +3,25 @@ package cn.lzh.tree;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class Tree<T> {
-    Node<T> root;
+public class BinaryTree<T> {
+    BinaryNode<T> root;
 
-    public Tree() {
+    public BinaryTree() {
     }
 
-    public Tree(Node<T> root) {
+    public BinaryTree(BinaryNode<T> root) {
         this.root = root;
     }
 
     @Override
     public String toString() {
-        return "Tree{" +
+        return "BinaryTree{" +
                 "height=" + height(root) +
                 ", root=" + root +
                 '}';
     }
 
-    public static int height(Node node) {
+    public static int height(BinaryNode node) {
         if (node == null) {
             return 0;
         }
@@ -31,13 +31,13 @@ public class Tree<T> {
     /**
      * 层遍历
      *
-     * @param node Node
+     * @param node BinaryNode
      */
-    public static void levelOrder(Node node) {
+    public static void levelOrder(BinaryNode node) {
         if (node == null) {
             return;
         }
-        Queue<Node> queue = new ArrayDeque<>();
+        Queue<BinaryNode> queue = new ArrayDeque<>();
         queue.add(node);
         while (!queue.isEmpty()) {
             node = queue.poll();
@@ -57,9 +57,9 @@ public class Tree<T> {
     /**
      * 前序遍历
      *
-     * @param node Node
+     * @param node BinaryNode
      */
-    public static void preOrder(Node node) {
+    public static void preOrder(BinaryNode node) {
         if (node == null) {
             return;
         }
@@ -71,9 +71,9 @@ public class Tree<T> {
     /**
      * 中序遍历
      *
-     * @param node Node
+     * @param node BinaryNode
      */
-    public static void inOrder(Node node) {
+    public static void inOrder(BinaryNode node) {
         if (node == null) {
             return;
         }
@@ -85,9 +85,9 @@ public class Tree<T> {
     /**
      * 后序遍历
      *
-     * @param node Node
+     * @param node BinaryNode
      */
-    public static void postOrder(Node node) {
+    public static void postOrder(BinaryNode node) {
         if (node == null) {
             return;
         }

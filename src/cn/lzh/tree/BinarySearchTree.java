@@ -1,16 +1,16 @@
 package cn.lzh.tree;
 
-public class BinarySearchTree extends Tree<Integer> {
+public class BinarySearchTree extends BinaryTree<Integer> {
 
         public BinarySearchTree() {
         }
 
-        BinarySearchTree(Node<Integer> root) {
+        BinarySearchTree(BinaryNode<Integer> root) {
             super(root);
         }
 
-        public Node<Integer> find(int value) {
-            Node<Integer> node = root;
+        public BinaryNode<Integer> find(int value) {
+            BinaryNode<Integer> node = root;
             while (node != null) {
                 if (node.data == value) return node;
                 else if (node.data > value) node = node.left;
@@ -27,20 +27,20 @@ public class BinarySearchTree extends Tree<Integer> {
          */
         public boolean insert(int value) {
             if (root == null) {
-                root = new Node<>(value);
+                root = new BinaryNode<>(value);
                 return true;
             }
-            Node<Integer> node = root;
+            BinaryNode<Integer> node = root;
             while (true) {
                 if (node.data > value) {
                     if (node.left == null) {
-                        node.left = new Node<>(value);
+                        node.left = new BinaryNode<>(value);
                         break;
                     }
                     node = node.left;
                 } else if (node.data < value) {
                     if (node.right == null) {
-                        node.right = new Node<>(value);
+                        node.right = new BinaryNode<>(value);
                         break;
                     }
                     node = node.right;
@@ -52,7 +52,7 @@ public class BinarySearchTree extends Tree<Integer> {
         }
 
         public boolean delete(int value) {
-            Node<Integer> node = root, parent = null;
+            BinaryNode<Integer> node = root, parent = null;
             while (node != null && node.data != value) {
                 parent = node;
                 if (node.data > value) node = node.left;
@@ -61,11 +61,11 @@ public class BinarySearchTree extends Tree<Integer> {
             if (node == null) {
                 return false;
             }
-            Node<Integer> child;
+            BinaryNode<Integer> child;
             if (node.left != null && node.right != null) {
                 // 查找右子树中最小节点
-                Node<Integer> min = node.right;
-                Node<Integer> minParent = node;
+                BinaryNode<Integer> min = node.right;
+                BinaryNode<Integer> minParent = node;
                 while (min.left != null) {
                     minParent = min;
                     min = min.left;
