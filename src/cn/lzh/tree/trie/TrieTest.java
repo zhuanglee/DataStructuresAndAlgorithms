@@ -4,9 +4,9 @@ import cn.lzh.utils.Log;
 
 import java.util.*;
 
-public final class TestTrie {
+public final class TrieTest {
 
-    private TestTrie(){
+    private TrieTest(){
         throw new AssertionError("cannot instantiation");
     }
 
