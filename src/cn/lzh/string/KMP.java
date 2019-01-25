@@ -3,7 +3,7 @@ package cn.lzh.string;
 import com.sun.istack.internal.NotNull;
 
 /**
- * KMP算法<br/>
+ * KMP算法：利用好前缀规则，向后遍历<br/>
  * https://www.zhihu.com/question/21923021<br/>
  * https://time.geekbang.org/column/article/71845
  */

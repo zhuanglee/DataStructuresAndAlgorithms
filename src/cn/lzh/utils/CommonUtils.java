@@ -2,7 +2,11 @@ package cn.lzh.utils;
 
 import java.util.Arrays;
 
-public class CommonUtils {
+public final class CommonUtils {
+
+    private CommonUtils(){
+        throw new AssertionError("cannot instantiation");
+    }
 
     /**
      * {@link Arrays#toString(Object[])}

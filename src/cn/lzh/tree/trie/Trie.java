@@ -79,19 +79,25 @@ public abstract class Trie<T> {
             children.put(node.getData(), node);
         }
 
-        public boolean remove(@NotNull Node<T> node){
-            if(children == null){
-                return false;
-            }
-            return children.remove(node.getData()) != null;
-        }
-
         public Node<T> get(T key) {
             return children == null ? null : children.get(key);
         }
 
         public boolean hasChildren() {
             return children != null && children.size() > 0;
+        }
+
+        public void clear(){
+            if(children != null){
+                children.clear();
+            }
+        }
+
+        public boolean remove(@NotNull Node<T> node){
+            if(children == null){
+                return false;
+            }
+            return children.remove(node.getData()) != null;
         }
     }
 

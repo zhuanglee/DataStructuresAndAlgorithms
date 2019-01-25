@@ -11,10 +11,23 @@ import java.util.*;
  */
 public class CharTrie extends Trie<Character> {
 
+    public CharTrie() {
+    }
+
+    public CharTrie(Node<Character> root) {
+        super(root);
+    }
+
+    public CharTrie(List<String> list) {
+        for (String s : list) {
+            add(s);
+        }
+    }
+
     @Override
     public void add(@NotNull String text) {
         text = text.trim();
-        if(text.length() == 0){
+        if (text.length() == 0) {
             throw new IllegalArgumentException("text is empty");
         }
         Node<Character> node = root;
@@ -59,11 +72,12 @@ public class CharTrie extends Trie<Character> {
 
     /**
      * 深度遍历
-     * @param node 继续遍历该节点的子节点
-     * @param list 结果集
+     *
+     * @param node   继续遍历该节点的子节点
+     * @param list   结果集
      * @param prefix 文本前缀
      */
-    private void dfs(@NotNull Node<Character> node, @NotNull List<String> list, String prefix) {
+    public static void dfs(@NotNull Node<Character> node, @NotNull List<String> list, @NotNull String prefix) {
         if (node.hasChildren()) {
             String newPrefix;
             Collection<Node<Character>> nodes = node.getChildren().values();
@@ -76,9 +90,16 @@ public class CharTrie extends Trie<Character> {
                     dfs(n, list, newPrefix);
                 }
             }
-        }else{
+        } else {
             list.add(prefix);
         }
     }
 
+    @Override
+    public String toString() {
+        List<String> list = new ArrayList<>();
+        Character data = root.getData();
+        dfs(root, list, data == null ? "" : String.valueOf(data));
+        return Arrays.toString(list.toArray());
+    }
 }

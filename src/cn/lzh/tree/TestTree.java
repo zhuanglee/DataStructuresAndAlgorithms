@@ -8,6 +8,10 @@ import org.junit.Test;
  */
 public class TestTree {
 
+    private TestTree(){
+        throw new AssertionError("cannot instantiation");
+    }
+
     private static final BinaryTree<Character> LETTER_TREE = new BinaryTree<>(new BinaryNode<>('A',
             new BinaryNode<>('B',
                     new BinaryNode<>('D',

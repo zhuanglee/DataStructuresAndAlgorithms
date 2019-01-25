@@ -1,6 +1,10 @@
 package cn.lzh.utils;
 
-public class Log {
+public final class Log {
+
+    private Log(){
+        throw new AssertionError("cannot instantiation");
+    }
 
     public static boolean isDebug;
 

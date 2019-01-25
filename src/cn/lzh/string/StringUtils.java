@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 字符串匹配算法<br/>
+ * 字符串匹配算法工具类<br/>
  * https://time.geekbang.org/column/article/71187<br/>
  * https://time.geekbang.org/column/article/71525<br/>
  */
