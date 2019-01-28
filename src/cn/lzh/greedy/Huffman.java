@@ -250,4 +250,13 @@ public class Huffman {
         }
     }
 
+    public static void main(String[] args) {
+        Log.isDebug = true;
+        String text = "测试Huffman编码与解码";
+        Huffman huffman = new Huffman();
+        String encode = huffman.encode(text);
+        Log.info("huffman.encode(%s)=%s\n", text, encode);
+        Log.info("huffman.decode(%s)=%s\n", encode, huffman.decode(encode));
+    }
+
 }
