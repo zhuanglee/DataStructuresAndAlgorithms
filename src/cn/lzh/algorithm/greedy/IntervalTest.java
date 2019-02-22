@@ -1,4 +1,4 @@
-package cn.lzh.greedy;
+package cn.lzh.algorithm.greedy;
 
 
 import cn.lzh.utils.Log;
