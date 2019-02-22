@@ -12,7 +12,7 @@ public class DirectedGraph extends AbstractGraph {
      *
      * @param size 顶点的个数
      */
-    protected DirectedGraph(int size) {
+    public DirectedGraph(int size) {
         super(size);
     }
 

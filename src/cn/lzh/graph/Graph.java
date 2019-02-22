@@ -6,7 +6,7 @@ import com.sun.istack.internal.Nullable;
  * 图<br/>
  * 参考: https://time.geekbang.org/column/article/70891<br/>
  */
-public interface Graph {
+public interface Graph<T> {
     int DEFAULT_PRE_NODE = -1;
 
     /**

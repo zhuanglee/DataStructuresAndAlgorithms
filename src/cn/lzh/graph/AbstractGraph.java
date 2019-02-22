@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 抽象图<br/>
  */
-public abstract class AbstractGraph implements Graph {
+public abstract class AbstractGraph<T> implements Graph<T> {
     /**
      * 顶点个数
      */
