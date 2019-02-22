@@ -8,7 +8,7 @@ import java.util.Arrays;
  * 8皇后问题（回溯算法）
  */
 public final class Queen8 {
-    public static final int QUEEN_NUMBER = 8;
+    private static final int QUEEN_NUMBER = 8;
     private static int index;
 
     public static void main(String[] args) {
